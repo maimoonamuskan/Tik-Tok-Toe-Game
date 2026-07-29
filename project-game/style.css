@@ -1,0 +1,144 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    color:#fff;
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+#turn{
+    color:#fff;
+    margin-bottom:25px;
+    font-weight:500;
+}
+
+.game{
+    width:330px;
+    display:grid;
+    grid-template-columns:repeat(3,100px);
+    gap:15px;
+}
+
+.box{
+    width:100px;
+    height:100px;
+    border:none;
+    border-radius:15px;
+    background:rgba(255,255,255,.2);
+    backdrop-filter:blur(10px);
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+    color:#fff;
+    font-size:3rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.box:hover{
+    transform:scale(1.05);
+    background:rgba(255,255,255,.35);
+}
+
+.box:disabled{
+    cursor:not-allowed;
+}
+
+.buttons{
+    margin-top:25px;
+}
+
+#reset-btn,
+#new-btn{
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    background:#fff;
+    color:#764ba2;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#reset-btn:hover,
+#new-btn:hover{
+    transform:scale(1.05);
+}
+
+.msg-container{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:100;
+}
+
+.popup{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    animation:popup .4s ease;
+}
+
+.popup h2{
+    color:#764ba2;
+    margin-bottom:20px;
+}
+
+.hide{
+    display:none;
+}
+
+.win{
+    background:#2ecc71 !important;
+    color:white;
+}
+
+@keyframes popup{
+    from{
+        transform:scale(.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+@media(max-width:500px){
+
+.game{
+    width:270px;
+    grid-template-columns:repeat(3,80px);
+}
+
+.box{
+    width:80px;
+    height:80px;
+    font-size:2.5rem;
+}
+
+h1{
+    font-size:2rem;
+}
+
+}
